@@ -87,6 +87,21 @@ BinarySearchTree.prototype.max = function () {
   }
   return node.key;
 };
+
+BinarySearchTree.prototype.search = function (key) {
+  var node = this.root;
+  while (node != null) {
+    if (node.key > key) {
+      node = node.left;
+    } else if (node.key < key) {
+      node = node.right;
+    } else {
+      return true;
+    }
+  }
+  return false;
+};
+
 var bts = new BinarySearchTree();
 bts.insert(8);
 bts.insert(10);
